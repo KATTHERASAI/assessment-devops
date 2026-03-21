@@ -29,7 +29,8 @@ Networking: No NAT Gateway used (avoids additional charges), Please find the ima
                                                     **AWS ECR** 
 <img width="979" height="552" alt="image" src="https://github.com/user-attachments/assets/20f26422-7ad8-4eaf-bcc8-587933d82eeb" />
                                                      **Security Grp**
- <img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/8d042661-c2e3-4245-bd64-c8440b8d68ce" />
+<img width="979" height="552" alt="image" src="https://github.com/user-attachments/assets/07c446bc-3bfe-41e6-a83a-0b32c5d8412c" />
+
                                                      
 <img width="979" height="552" alt="image" src="https://github.com/user-attachments/assets/4b88059e-0c54-415e-bea6-43996c1b7cfd" />
 
