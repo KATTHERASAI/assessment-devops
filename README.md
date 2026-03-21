@@ -14,7 +14,7 @@ This project is designed within AWS Free Tier limits
 EC2: t3.micro instances used with Auto Scaling 
 RDS: db.t3.micro (Single-AZ) used within free tier limits
 DynamoDB: Payper request mode within free usage limits
-ECR: Only one Docker image stored (pushed the alipine image 64 MB)
+ECR: Only one Docker image stored (Used the alpine images - 64 MB)
 Networking: No NAT Gateway used (avoids additional charges), Please find the images below for the refernce
 
                                                 **AWS Billing**
@@ -28,7 +28,9 @@ Networking: No NAT Gateway used (avoids additional charges), Please find the ima
                                                     
                                                     **AWS ECR** 
 <img width="979" height="552" alt="image" src="https://github.com/user-attachments/assets/20f26422-7ad8-4eaf-bcc8-587933d82eeb" />
-
+                                                     **Security Grp**
+ <img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/8d042661-c2e3-4245-bd64-c8440b8d68ce" />
+                                                     
 <img width="979" height="552" alt="image" src="https://github.com/user-attachments/assets/4b88059e-0c54-415e-bea6-43996c1b7cfd" />
 
 
