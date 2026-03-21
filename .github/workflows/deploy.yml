@@ -1,4 +1,4 @@
-name: Test Pipeline
+name: CI-CD Pipeline
 
 on:
   push:
@@ -6,12 +6,39 @@ on:
       - main
 
 jobs:
-  test:
+  build-and-push:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Print Message
-        run: echo "Pipeline is working 🚀"
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Build JAR
+        run: mvn clean package
+
+      - name: Build Docker Image
+        run: docker build -t devops-app .
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
+          aws-region: ap-south-1
+
+      - name: Login to ECR
+        run: |
+          aws ecr get-login-password --region ap-south-1 \
+          | docker login --username AWS --password-stdin ${{ secrets.ECR_URL }}
+
+      - name: Tag Image
+        run: docker tag devops-app:latest ${{ secrets.ECR_URL }}:latest
+
+      - name: Push Image
+        run: docker push ${{ secrets.ECR_URL }}:latest
